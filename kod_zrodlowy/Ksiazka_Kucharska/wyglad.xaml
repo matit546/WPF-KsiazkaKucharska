@@ -1,0 +1,136 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Ksiazka_Kucharska">
+
+
+    <Style TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="DarkBlue" />
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Height" Value="35" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontFamily" Value="Calibri" />
+        <Setter Property="Foreground" Value="GreenYellow" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="LightBlue" BorderThickness="1" CornerRadius="15,0,15,0" x:Name="bd">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                    Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bd" Property="Background" Value="#4fa7ea"/>
+                            <Setter Property="Foreground" Value="DarkGreen" />
+                            <Setter Property="Cursor" Value="Hand" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="korz"  TargetType="{x:Type Label}">
+        <Setter Property="BorderBrush" Value="BlanchedAlmond"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="FontFamily" Value="Book Antiqua"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border x:Name="border" Background="Wheat"
+                    BorderBrush="LightBlue" BorderThickness="3" CornerRadius="5,5,5,5">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                    Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True" />
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style TargetType="ListBox">
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="#FFF5F6B3"/>
+        <Setter Property="FontSize" Value=" 16"/>
+    </Style>
+    
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Bold"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontWeight" Value="ExtraBold"/>
+        <Setter Property="Background" Value="#FFF5F6B3"/>
+        <Setter Property="Opacity" Value="0.75"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border x:Name="border" Background="Wheat" BorderThickness="3"/>
+                        <ScrollViewer Margin="2,0,0,0" x:Name="PART_ContentHost" VerticalAlignment="Center" />
+                        <Label x:Name="WaterMarkLabel" Content="{TemplateBinding Tag}" VerticalAlignment="Stretch"
+                               Visibility="Collapsed" Foreground="Gray" FontFamily="Arial"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="DimGray"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="#FF6389F3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+    <Style x:Key="textbox_opis" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border x:Name="border" Background="Wheat" BorderThickness="3"/>
+                        <ScrollViewer  x:Name="PART_ContentHost" Margin="2,2,2,2" VerticalAlignment="Top" />
+                        <Label x:Name="WaterMarkLabel" Content="{TemplateBinding Tag}" VerticalAlignment="Stretch"
+                               Visibility="Collapsed" Foreground="Gray" FontFamily="Arial"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="DimGray"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="#FF6389F3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

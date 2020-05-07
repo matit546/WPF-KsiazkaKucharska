@@ -1,0 +1,43 @@
+﻿<Window x:Class="Ksiazka_Kucharska.Przepis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ksiazka_Kucharska"
+        mc:Ignorable="d"
+        Title="Przepis" Height="564.259" Width="943.733"  WindowStartupLocation="CenterScreen" >
+    <Window.Background>
+        <ImageBrush ImageSource="tlo.jpg" />
+    </Window.Background>
+    <Window.Resources>
+        <ResourceDictionary Source="wyglad.xaml" />
+    </Window.Resources>
+
+
+    <Viewbox Margin="0,0,0,0" Stretch="Fill">
+
+
+        <Grid Height="539" Width="934">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="opis" HorizontalAlignment="Left" Height="385" Margin="328,56,0,0" TextWrapping="Wrap" Text="{Binding opis_potrawy}" VerticalAlignment="Top" Width="606" RenderTransformOrigin="1.319,0.171" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="nazwa" HorizontalAlignment="Left" Height="30" Margin="2,56,0,0" TextWrapping="Wrap" Text="{Binding nazwa_potrawy}" VerticalAlignment="Top" Width="283"/>
+            <TextBlock x:Name="kategoria1" TextWrapping="Wrap" Text="{Binding kategoria_1}" Margin="-1,418,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234" Height="30" />
+            <TextBlock x:Name="kategoria2" HorizontalAlignment="Left" Height="30" Margin="-1,453,0,0" TextWrapping="Wrap" Text="{Binding kategoria_2}" VerticalAlignment="Top" Width="234"/>
+            <TextBlock x:Name="kategoria3" HorizontalAlignment="Left" Height="30" Margin="-1,488,0,-2" TextWrapping="Wrap" Text="{Binding kategoria_3}" VerticalAlignment="Top" Width="234"/>
+            <Button Opacity="0.75"  Content="Edytuj" HorizontalAlignment="Left" Height="56" Margin="477,448,0,0" VerticalAlignment="Top" Width="221" Click="Edytuj_przepis" Grid.ColumnSpan="2"/>
+            <ListBox x:Name="dzialaj" Opacity="0.75" HorizontalAlignment="Left" Height="252" Margin="-1,125,0,0" VerticalAlignment="Top" Width="286"/>
+            <Label Opacity="0.75" Style="{StaticResource korz}" Content="Nazwa Potrawy" HorizontalAlignment="Left"  Height="30" Margin="0,22,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.304,1.333" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <Label Opacity="0.75" Style="{StaticResource korz}" Content="Skladniki" HorizontalAlignment="Left" Height="29" Margin="2,96,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" HorizontalContentAlignment="Center" RenderTransformOrigin="0.354,-0.014"/>
+            <Label Opacity="0.75" Style="{StaticResource korz}" Content="Kategorie" HorizontalAlignment="Left" Height="31" Margin="-1,382,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" HorizontalContentAlignment="Center" RenderTransformOrigin="0.798,0.543"/>
+            <Label Opacity="0.75" Style="{StaticResource korz}"  Content="Opis Przygotowania" HorizontalAlignment="Left" Height="34" Margin="360,17,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" HorizontalContentAlignment="Left" Grid.ColumnSpan="2"/>
+            <Button Opacity="0.75" Content="Zamknij" HorizontalAlignment="Left" Height="56" Margin="235.8,446,0,0" VerticalAlignment="Top" Width="218" Click="zamknij_okno" Grid.Column="1"/>
+
+
+        </Grid>
+
+    </Viewbox>
+
+</Window>
